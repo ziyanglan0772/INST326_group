@@ -4,7 +4,12 @@ import main_script as ms1
 from pathlib import Path
 import unittest
 
+#Input the following variable for testing
+#Api_key should be generated on Riot API website.
 api_1='RGAPI-31e0b65a-b962-4843-b680-5d594d51e228'
+match_id1=''
+match_id2=''
+match_id3=''
 class TestPlayer(unittest.TestCase):
     """ Test the Player class.
     
@@ -29,12 +34,19 @@ class TestPlayer(unittest.TestCase):
         
     def test_acc_id(self):
         """ Test whether test_acc_id() works as expected. """
-        self.assertEqual(self.pl1.acc_id(), 'lok666','PH2JxfvfIN7X_-S0sJGC7WLu6vmtkITUvrO6ZpCmvZZ8jG4')
-        self.assertEqual(self.pl2.acc_id(), 'lok666','gpAiwZ_elswytdFhTzaXieVq4O6Y2iUhbgB86ie6O7ua4k8')
-        self.assertEqual(self.pl3.acc_id(), None,'Error for handling invalid summoners name')
+        self.assertEqual(self.pl1.acc_id(), 'PH2JxfvfIN7X_-S0sJGC7WLu6vmtkITUvrO6ZpCmvZZ8jG4','Error geting acc_id for summoners')
+        self.assertEqual(self.pl2.acc_id(), 'gpAiwZ_elswytdFhTzaXieVq4O6Y2iUhbgB86ie6O7ua4k8','Error for getting acc_id for summoners name contains space')
+        self.assertEqual(self.pl3.acc_id(), None,'Error for handling invalid summoners name(acc_id)')
         
-    def test_match_id(self,):
+    def test_match_id(self):
         """ Test whether match_id() works as expected. """
-        self.assertEqual(self.pl1.match_id(), 'lok666','PH2JxfvfIN7X_-S0sJGC7WLu6vmtkITUvrO6ZpCmvZZ8jG4')
-        self.assertEqual(self.pl2.match_id(), 'lok666','gpAiwZ_elswytdFhTzaXieVq4O6Y2iUhbgB86ie6O7ua4k8')
-        self.assertEqual(self.pl3.match_id(), None,'Error for handling invalid summoners name')    
+        self.assertEqual(self.pl1.match_id(), match_id1,'Error geting match_id')
+        self.assertEqual(self.pl2.match_id(), match_id2,'Error for getting match_id for summoners name contains space')
+        self.assertEqual(self.pl3.match_id(), None,'Error for handling invalid summoners name(match_id)')    
+    
+    def test_match_history(self):
+        """ Test whether match_history() works as expected. """
+        self.assertEqual(self.pl1.match_history(match_id1), 200,'Error geting match_history')
+        self.assertEqual(self.pl2.match_history(match_id2), 200,'Error for getting match_history for summoners name contains space')
+        self.assertEqual(self.pl3.match_history(match_id3), None,'Error for handling invalid summoners name(match_history)')
+    
