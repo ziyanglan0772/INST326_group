@@ -50,3 +50,24 @@ class TestPlayer(unittest.TestCase):
         self.assertEqual(self.pl2.match_history(match_id2), 200,'Error for getting match_history for summoners name contains space')
         self.assertEqual(self.pl3.match_history(match_id3), None,'Error for handling invalid summoners name(match_history)')
     
+def test_player_winrate(self):
+    """ Test whether player_winrate() works as expected. """
+    self.assertEqual(self.pl1.match_id()'Error for handling invalid)
+    self.assertEqual(self.pl2.match_id(),
+    self.assertEqual(self.pl3.match_id(),                
+    
+def test_champ_winrate(self):
+    """ Test whether champ_winrate() works as expected. """
+    self.assertEqual('Error for handling invalid champion)
+    
+def test_against_winrate(self):
+    """ Test whether against_winrate() works as expected. """
+    self.assertEqual(self.pl1.match_id(),
+    self.assertEqual(self.pl2.match_id(),
+    self.assertEqual(self.pl3.match_id(),
+    
+def test_find_dodge(self):
+    """ Test whether find_dodge() works as expected. """
+    self.assertEqual()
+    
+    
