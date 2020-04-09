@@ -52,22 +52,24 @@ class TestPlayer(unittest.TestCase):
     
 def test_player_winrate(self):
     """ Test whether player_winrate() works as expected. """
-    self.assertEqual(self.pl1.match_id()'Error for handling invalid)
-    self.assertEqual(self.pl2.match_id(),
-    self.assertEqual(self.pl3.match_id(),                
+    self.assertEqual(self.player_winrate('lok666'), .4 , 'Error for handling invalid datatype')
+    self.assertEqual(self.player_winrate('1 gpa'), .6, 'Error for handling invalid datatype')
+    self.assertEqual(self.plplayer_winrate('EnjoyUrNoobness'), .3, 'Error for handling invalid datatype')              
     
 def test_champ_winrate(self):
     """ Test whether champ_winrate() works as expected. """
-    self.assertEqual('Error for handling invalid champion)
+    self.assertEqual(self.champ_winrate("Shaco", 'lok666'), .53, 'Error for handling invalid champion')
+    self.assertEqual(self.champ_winrate("Zed", '1 gpa'), .75, 'Error for handling invalid champion')  
+    self.assertEqual(self.champ_winrate("Yasuo", 'EnjoyUrNoobness'), .45, 'Error for handling invalid champion') 
     
 def test_against_winrate(self):
     """ Test whether against_winrate() works as expected. """
-    self.assertEqual(self.pl1.match_id(),
-    self.assertEqual(self.pl2.match_id(),
-    self.assertEqual(self.pl3.match_id(),
+    self.assertEqual(self.against_winrate('Shaco', 'Olaf'), .54, 'Error invalid champion')
+    self.assertEqual(self.against_winrate('Zed', 'Ziggs'), .45, 'Error champion doesnt exist')
+    self.assertEqual(self.against_winrate('Yasuo', 'Zilean'), .48, 'Error invalid champion') 
     
 def test_find_dodge(self):
     """ Test whether find_dodge() works as expected. """
-    self.assertEqual()
-    
-    
+    self.assertEqual(self.find_dodge(.53, .54, .65), 'Error for handling invalid datatype')
+    self.assertEqual(self.find_dodge(.75, .45, .57), 'Error for handling invalid datatype')
+    self.assertEqual(self.find_dodge(.45, .48, .42), 'Error for handling invalid datatype')
