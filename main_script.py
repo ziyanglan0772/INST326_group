@@ -2,7 +2,7 @@
 import requests
 
 class Player:
-    '''A class for stroing details for a player.
+    '''A class for storing details for a player.
     
     Attributes:
         api(str):The generated api key.
@@ -36,11 +36,8 @@ class Player:
         return acc_id
     
     #Unfinished
-    def match_id(self,acc_id):
+    def match_id(self):
         '''Finding the match ID of the player.
-        
-        Args:
-        acc_id(str):The encrypted account ID of the player.
         
         Returns:
             match_id(str): the match ID of the player.
@@ -89,14 +86,12 @@ def champ_winrate(champ_name,user_id):
     '''
     return champ_winrate
 
-def against_winrate(champ_name1,champ_name2,user_id1,user_id2):
+def against_winrate(champ_name1,champ_name2):
     '''Finding the match wirnate of champions of two players.
        
     Args:
-    champ_name1(str):The name of the champion that is being played by the first player.
-    champ_name2(str):The name of the champion that is being played by the second player.
-    user_id1(str): The summoners name of the first player.
-    user_id2(str): The summoners name of the second player.
+    champ_name1(str):The name of the champion that is being played by the player in your team.
+    champ_name2(str):The name of the champion that is being played by the enemy player.
     
     Returns:
     against_winrate(float): The winrate of this champion match.
