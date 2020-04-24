@@ -58,13 +58,23 @@ class Player:
         return match_list
         
 
-    def get_match_id(self,match_list):
+    def get_match(self,match_list):
         '''Get the matchId of a specific game.
         
         Returns:
-            match_id(str): the matchId of the specific game.
+            match_data(str): the matchId of the specific game.
         '''
-        queue_id 
+        match_data_list=[]
+        for i in match_list:
+            name=get_champ_name(i['champion'])
+            match_id=i['gameId']
+            endpoint = 'https://'+self.region+'.api.riotgames.com/lol/match/v4/matches/'+game_id
+            response =requests.get(endpoint)
+            response.raise_for_status()
+            match_data=response.json()
+            match_data_list.append(match_data.copy())
+        return match_data_list
+
     def get_champ_name(self,champion_id):
         if id ==266:
             return "Aatrox"
@@ -345,9 +355,6 @@ class Player:
     wins_counter=0
     loss_counter=0
     player_winrate=[wins_counter,loss_counter]
-    for i in match_list:
-        name=get_champ_name(i['champion'])
-        match_id=i['gameId']
         
         
     
