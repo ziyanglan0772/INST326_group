@@ -373,6 +373,22 @@ class Player:
     '''
     return champ_winrate
 
+def show_Winrates(matchList: dict): //not finished code still working
+    win_or_loss = [0, 0]
+    champ_winrates = {}
+
+    for match in matchList['matches']:
+        champion = championId_to_name(match['champion'])
+        gameId = match['gameId']
+        
+        matchUrl = 'https://na1.api.riotgames.com/lol/match/v4/matches/{}'.format(gameId)
+        matchInfo = requests.get(matchUrl, headers = headers).json()
+=
+        enemyId = 0
+        for player in matchInfo['participantIdentities']:
+            if player['player']['summonerName'] == 'Cry in a Corner':
+                enemyId = player['participantId']
+
 def against_winrate(champ_name1,champ_name2):
     '''Finding the match wirnate of champions of two players.
        
