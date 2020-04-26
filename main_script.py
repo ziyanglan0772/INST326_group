@@ -401,6 +401,16 @@ def against_winrate(champ_name1,champ_name2):
     '''
     return against_winrate
 
+def champ_counter(champ_1, champ_2, champ_winrate)
+    '''Finding the match wirnate of champions between 2 players to see which champion counters the other one.
+       
+    Args:
+    champ_1(str):The name of the champion that is being played by the player in your team.
+    champ_2(str):The name of the champion that is being played by the enemy player.
+    
+    Returns:
+    champ_counter(str): Which champion wins over the other champion.
+
 def find_dodge(champ_winrate,against_winrate,player_winrate):
     '''Determining whether the player need to dodge the game.
        
