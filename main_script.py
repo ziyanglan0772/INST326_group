@@ -1,5 +1,7 @@
 'A script for helping players figure out whether dodge is necessary in a current League of Legends game.'
 import requests
+import pandas as pd
+import matplotlib.pyplot as plt
 
 class Player:
     '''A class for storing details for a player.
@@ -74,7 +76,23 @@ class Player:
             match_data=response.json()
             match_data_list.append(match_data.copy())
         return match_data_list
-
+    
+    def champ_winrate(self):
+        """Assign each champion to the winrate given from the League of Legends API
+        """
+        Taric = "52.55"
+        Nami = "52.75"
+        Wukung = "52.70"
+        Urgot = "52.69"
+        Maokai = "52.68"
+        Amumu = "52.58"
+        Yorick = "52.56"
+        
+    def Final_code():
+        champ_one = input("Please enter the champion you are playing")
+        champ_two = input("Please enter the champion youre playing against")
+        plt.figure(figsize=(10,10))
+        plt.bar(df[champ_one], df[champ_one])
     def get_champ_name(self,champion_id):
         if id ==266:
             return "Aatrox"
@@ -343,73 +361,7 @@ class Player:
         elif id == 81: 
             return "Ezreal"
 
-    def player_winrate(self,match_list):
-    '''Finding the player winrate within the newest matches.
-       
-    Args:
-    match_list(set):the match list of the player.
-        
-    Returns:
-    player_winrate(float): The winrate of the player.
-    '''
-    wins_counter=0
-    loss_counter=0
-    player_winrate=[wins_counter,loss_counter]
-        
-        
-    
-    
-    return player_winrate
-
-    def champ_winrate(champ_name,user_id):
-    '''Finding the winrate of the champion that the player is playing.
-       
-    Args:
-    champ_name(str):The name of the champion that is being played.
-    user_id(str): The summoners name of the player.
-        
-    Returns:
-    champ_winrate(float): The winrate of the champion.
-    '''
-    return champ_winrate
-
-def show_Winrates(matchList: dict): //not finished code still working
-    win_or_loss = [0, 0]
-    champ_winrates = {}
-
-    for match in matchList['matches']:
-        champion = championId_to_name(match['champion'])
-        gameId = match['gameId']
-        
-        matchUrl = 'https://na1.api.riotgames.com/lol/match/v4/matches/{}'.format(gameId)
-        matchInfo = requests.get(matchUrl, headers = headers).json()
-=
-        enemyId = 0
-        for player in matchInfo['participantIdentities']:
-            if player['player']['summonerName'] == 'Cry in a Corner':
-                enemyId = player['participantId']
-
-def against_winrate(champ_name1,champ_name2):
-    '''Finding the match wirnate of champions of two players.
-       
-    Args:
-    champ_name1(str):The name of the champion that is being played by the player in your team.
-    champ_name2(str):The name of the champion that is being played by the enemy player.
-    
-    Returns:
-    against_winrate(float): The winrate of this champion match.
-    '''
-    return against_winrate
-
-def champ_counter(champ_1, champ_2, champ_winrate)
-    '''Finding the match wirnate of champions between 2 players to see which champion counters the other one.
-       
-    Args:
-    champ_1(str):The name of the champion that is being played by the player in your team.
-    champ_2(str):The name of the champion that is being played by the enemy player.
-    
-    Returns:
-    champ_counter(str): Which champion wins over the other champion.
+ 
 
 def find_dodge(champ_winrate,against_winrate,player_winrate):
     '''Determining whether the player need to dodge the game.
