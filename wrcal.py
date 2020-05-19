@@ -298,5 +298,5 @@ def main():
     print(df1)
     plt.bar(df1['Champion Name'],df1['Winrate'])
     plt.show()
-    
-main()
+if __name__ == "__main__":  
+    main()
