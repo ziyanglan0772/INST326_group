@@ -6,7 +6,14 @@ and create an account, after creating an account click on the dashboard, located
 Because the Riot API only allows 100 requests within 2 minutes, you could only run our code two times per two minutes.
 If an error 403 occurs, It usually means that the inputed API key is expired.
 If an error 404 occurs, It usually means that the request for the API is over maximum. Please wait for 2 minute to re-run the code.
-
+#RUNNING THE CODE
+When running the code, for region put:
+#na1
+For summoner name write:
+#Shots of Bleach
+For api key input:
+#RGAPI-60c246a2-4456-422c-82f2-b3097de62d22
+everything else you can follow the prompt for
 ![Sample Data](https://user-images.githubusercontent.com/58304673/82372642-5541e400-99ea-11ea-816e-986cf32e4b66.jpg)
 
 ![Graphs](https://user-images.githubusercontent.com/58304673/82372580-36435200-99ea-11ea-9d2f-000127f03d5a.jpg)
