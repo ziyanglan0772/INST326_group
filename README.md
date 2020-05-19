@@ -7,6 +7,7 @@ and create an account, after creating an account click on the dashboard, located
 
 ![Graphs](https://user-images.githubusercontent.com/58304673/82372580-36435200-99ea-11ea-9d2f-000127f03d5a.jpg)
 
+Here is dataframe from the code. The first picture is from the website na.op.gg to ensure that our code works. The next picture is a screenshot of the dataframe being created and the last image is to display the final dataframe that was created from the original dataframe by entering a region, username, queue, and the range of games being searched. This final dataframe runs if the initial dataframe is correct as the final dataframe, is a combination of the data being inputted.
 ![games](https://user-images.githubusercontent.com/58304673/82373998-7277b200-99ec-11ea-861d-04d7db47f96a.jpg)
 
 ![98167849_490789391639649_2837226628046651392_n](https://user-images.githubusercontent.com/58304673/82374257-c84c5a00-99ec-11ea-8073-2b1f6fe365da.jpg)
