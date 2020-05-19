@@ -228,14 +228,8 @@ class Winrate:
         response1 =requests.get(endpoint1)
         response1.raise_for_status()
         summoner_data=response1.json()
-        
-        
-        sum_id=summoner_data['id']
-        
-        
+        sum_id=summoner_data['id'] 
         a=self.get_champ_id(champ_name)
-        
-        
         endpoint2='https://'+self.region+'.api.riotgames.com/lol/champion-mastery/v4/champion-masteries/by-summoner/'+sum_id+'/by-champion/'+a+'?api_key='+self.api
         response2 =requests.get(endpoint2)
         response2.raise_for_status()
@@ -250,10 +244,7 @@ def main():
     region=''
     while region not in ['br1','eun1','euw1','jp1','kr','la1','la2','na1','oc1','tr1','ru']:
         print('Regions:br1/eun1/euw1/jp1/kr/la1/la2/na1/oc1/tr1/ru')
-        region=input('Which region are you playing(select one from above)?: ')
-        
-        
-        
+        region=input('Which region are you playing(select one from above)?: ')   
     name1=input("The summoner name: ")
     
     api_key=input("Input the api key u got: ")
@@ -294,9 +285,11 @@ def main():
     print('This summoner is playing: '+champ)
     print('The champion level is: '+str(bbb1))
     print('The champion mastery is: '+str(bbb2))
+    print('Please wait for 30 second to let the code run.-----')
     print('The winrate of this summoner winthin '+games_num+'games,is: ')
     print(df1)
     plt.bar(df1['Champion Name'],df1['Winrate'])
     plt.show()
-if __name__ == "__main__":  
+    
+if __name__ == "__main__":    
     main()
