@@ -11,4 +11,5 @@ and create an account, after creating an account click on the dashboard, located
 
 ![98318687_620621008538496_4411244408733696000_n](https://user-images.githubusercontent.com/58304673/82374081-89b69f80-99ec-11ea-8819-3caa6135c786.jpg)
 
+![98318687_620621008538496_4411244408733696000_n (1)](https://user-images.githubusercontent.com/58304673/82374162-a8b53180-99ec-11ea-85d6-11e260a14796.jpg)
 
