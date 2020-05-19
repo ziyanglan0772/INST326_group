@@ -4,6 +4,8 @@ https://developer.riotgames.com/
 and create an account, after creating an account click on the dashboard, located in the top right of the screen. You can click your account and it should take you to a screen where it gives you an API key. Please copy that key and save it, it will be funcitonal for 24 hours. If this doesnt work please email me, and I will send you a new key to use when running the code.
 
 Because the Riot API only allows 100 requests within 2 minutes, you could only run our code two times per two minutes.
+If an error 403 occurs, It usually means that the inputed API key is expired.
+If an error 404 occurs, It usually means that the request for the API is over maximum. Please wait for 2 minute to re-run the code.
 
 ![Sample Data](https://user-images.githubusercontent.com/58304673/82372642-5541e400-99ea-11ea-816e-986cf32e4b66.jpg)
 
