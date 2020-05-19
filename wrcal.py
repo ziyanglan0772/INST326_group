@@ -29,8 +29,10 @@ class Winrate:
         
         Args:
         acc_id(str): The encrypted account id of the player.
-        queue_id(str): The queue type of the game, 420 for solo/duo, 440 for rank flex.
-        endindex(str): The range you want to search for. The maximum range is 30.    
+        queue_id(str): The queue type of the game, 420 for solo/duo, 440 for 
+        rank flex.
+        endindex(str): The range you want to search for. The maximum range is 
+        30.    
         
         Returns:
             match_df(set): the match_df contains lists of matches of the player.
@@ -62,7 +64,9 @@ class Winrate:
         acc_id(str): The encrypted account id of the player.   
         
         Returns:
-            wf_tuple(tuple): the first element for this tuple is the match id, and the second element for this tuple is whether the game was win or loss.
+            wf_tuple(tuple): the first element for this tuple is the match id, 
+            and the second element for this tuple is whether the game was win 
+            or loss.
                              
         '''
         endpoint='https://'+self.region+'.api.riotgames.com/lol/match/v4/matches/'+match_id+'?api_key='+self.api
@@ -90,11 +94,13 @@ class Winrate:
         '''Finding if games in a dataframe were win or lose.
         
         Args:
-        match_df(str): match_df(set): the match_df contains lists of matches of the player.
+        match_df(str): match_df(set): the match_df contains lists of matches 
+        of the player.
         acc_id(str): The encrypted account id of the player.   
         
         Returns:
-            final_df(DataFrame): the dataframe that contains the champion id,match id and win/fail
+            final_df(DataFrame): the dataframe that contains the champion id,
+            match id and win/fail
                              
         '''
         total_list=[]
@@ -109,10 +115,12 @@ class Winrate:
         return final_df
 
     def champ_name_id_list(self):
-        '''Getting the information of champion names and their related champion ids.
+        '''Getting the information of champion names and their related champion 
+        ids.
           
         Returns:
-            champ_list(list): A list contains the champion names and related champion ids.                    
+            champ_list(list): A list contains the champion names and related 
+            champion ids.                    
         '''
         champ_list=[]
         a='http://ddragon.leagueoflegends.com/cdn/10.10.3208608/data/en_US/champion.json'
@@ -159,14 +167,16 @@ class Winrate:
         Args:
             df(DataFrame):the target dataframe for modified
         Returns:
-            final_df(DataFrame): the dataframe contains the information of champion names.                    
+            final_df(DataFrame): the dataframe contains the information of 
+            champion names.                    
         '''
         champ_name_list=[]
         for champ_id in df['Champion ID']:
             champ_name=self.get_champ_name(str(champ_id))
             champ_name_list.append(champ_name)
         final_df=df.assign(Champ_Name=champ_name_list)
-        final_df=final_df.reindex(columns=['Champion ID','Champ_Name','Match ID','Win/Fail'])
+        final_df=final_df.reindex(columns=['Champion ID','Champ_Name',
+                                           'Match ID','Win/Fail'])
         return final_df
 
     def champ_winrate(self,df):
@@ -194,7 +204,8 @@ class Winrate:
             loses=lose_list.count(i)
             winrate=round(wins/(wins+loses),2)
             game_dict[i]=winrate
-        game_df = pd.DataFrame(list(game_dict.items()),columns = ['Champion Name','Winrate'])
+        game_df = pd.DataFrame(list(game_dict.items()),
+                               columns = ['Champion Name','Winrate'])
         return game_df
 
             
@@ -203,10 +214,13 @@ class Winrate:
     
         Args:
             
-            queue_id(str): The queue type of the game, 420 for solo/duo, 440 for rank flex.
-            endindex(str): The range you want to search for. The maximum range is 30. 
+            queue_id(str): The queue type of the game, 420 for solo/duo, 440 
+            for rank flex.
+            endindex(str): The range you want to search for. The maximum range 
+            is 30. 
         Returns:
-            get_champ_winrate(DataFrame): the dataframe contains all the information.                    
+            get_champ_winrate(DataFrame): the dataframe contains all the 
+            information.                    
         '''
         get_encrypted_id=self.acc_id() 
         get_match_list_df=self.get_match_list(get_encrypted_id,queue_id,endindex)
@@ -216,13 +230,15 @@ class Winrate:
         return get_champ_winrate
 
     def champ_mastery(self,champ_name):
-        '''The function for getting the champion level and champion mastery points.
+        '''The function for getting the champion level and champion mastery 
+        points.
     
         Args:
             
             champ_name(str):the champion name searching for. 
         Returns:
-            mastery_pt(tuple): the tuple contains champion level and champion points.                    
+            mastery_pt(tuple): the tuple contains champion level and champion 
+            points.                    
         '''
         endpoint1= 'https://'+self.region+'.api.riotgames.com/lol/summoner/v4/summoners/by-name/'+self.user_id+'?api_key='+self.api
         response1 =requests.get(endpoint1)
@@ -242,7 +258,8 @@ class Winrate:
     
 def main():
     region=''
-    while region not in ['br1','eun1','euw1','jp1','kr','la1','la2','na1','oc1','tr1','ru']:
+    while region not in ['br1','eun1','euw1','jp1','kr','la1','la2','na1','oc1',
+                         'tr1','ru']:
         print('Regions:br1/eun1/euw1/jp1/kr/la1/la2/na1/oc1/tr1/ru')
         region=input('Which region are you playing(select one from above)?: ')   
     name1=input("The summoner name: ")
