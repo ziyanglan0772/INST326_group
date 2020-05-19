@@ -9,7 +9,7 @@ and create an account, after creating an account click on the dashboard, located
 
 ![games](https://user-images.githubusercontent.com/58304673/82373998-7277b200-99ec-11ea-861d-04d7db47f96a.jpg)
 
-![98318687_620621008538496_4411244408733696000_n](https://user-images.githubusercontent.com/58304673/82374081-89b69f80-99ec-11ea-8819-3caa6135c786.jpg)
+![98167849_490789391639649_2837226628046651392_n](https://user-images.githubusercontent.com/58304673/82374257-c84c5a00-99ec-11ea-8073-2b1f6fe365da.jpg)
 
 ![98318687_620621008538496_4411244408733696000_n (1)](https://user-images.githubusercontent.com/58304673/82374162-a8b53180-99ec-11ea-85d6-11e260a14796.jpg)
 
