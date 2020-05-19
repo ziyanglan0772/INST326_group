@@ -5,5 +5,8 @@ and create an account, after creating an account click on the dashboard, located
 
 ![Sample Data](https://user-images.githubusercontent.com/58304673/82372642-5541e400-99ea-11ea-816e-986cf32e4b66.jpg)
 
-
 ![Graphs](https://user-images.githubusercontent.com/58304673/82372580-36435200-99ea-11ea-9d2f-000127f03d5a.jpg)
+
+![games](https://user-images.githubusercontent.com/58304673/82373998-7277b200-99ec-11ea-861d-04d7db47f96a.jpg)
+
+
